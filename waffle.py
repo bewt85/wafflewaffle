@@ -5,12 +5,13 @@ from gevent import monkey; monkey.patch_all()
 
 count = 0
 
-from bottle import route, run, get, post
+from bottle import route, run, get, post, static_file
+import os
 
 @get('/')
 def index():
-  global count
-  return "Counter: %s" % count
+  index_dir = os.path.dirname(__file__)
+  return static_file('index.html', index_dir)
 
 @get('/count')
 def getCount():

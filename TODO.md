@@ -1,6 +1,6 @@
 # WaffleWaffle TODO
 
-* Get the counter updating without a page refresh
+* Give votes a halflife
 * Add a boring button
 * Show the last 5 minute's counters
 * Put a halflife on the counters
