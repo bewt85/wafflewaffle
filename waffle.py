@@ -15,6 +15,9 @@ lastRequest = time.time()
 def getLatestCount(count, lastUpdate, now):
   return count * DAMP_FACTOR ** (now - lastUpdate)
 
+def twoSF(count):
+  return "{0:.2f}".format(count)
+
 @get('/')
 def index():
   index_dir = os.path.dirname(__file__)
@@ -27,7 +30,7 @@ def getCount():
   t = time.time()
   count = getLatestCount(count, lastRequest, t)
   lastRequest = t
-  return {'count': count, 'time': t }
+  return {'count': twoSF(count), 'time': t }
 
 @post('/count')
 def incCount():
@@ -36,6 +39,6 @@ def incCount():
   t = time.time()
   count = 1 + getLatestCount(count, lastRequest, t)
   lastRequest = t
-  return {'count': count, 'time': t }
+  return {'count': twoSF(count), 'time': t }
 
 run(server='gevent', host='localhost', port=8080, debug=True)
