@@ -6,22 +6,14 @@ from gevent import monkey; monkey.patch_all()
 from bottle import route, run, get, post, static_file
 import os, time
 
-VOTE_WINDOW = 1
 VOTE_LIFE = 5*60
-WINDOWS = (VOTE_LIFE / VOTE_WINDOW) + 1
-DAMP_FACTOR = 0.001**(1.0/WINDOWS)
-
-def getWindow(t):
-  return int(t / VOTE_WINDOW)
+DAMP_FACTOR = 0.001 ** ( 1.0 / VOTE_LIFE )
 
 count = 0.0
-previousWindow = getWindow(time.time()) 
+lastRequest = time.time() 
 
-def getLatestCount(count, previousWindow, thisWindow):
-  if previousWindow == thisWindow:
-    return count
-  else:
-    return count * DAMP_FACTOR ** (thisWindow - previousWindow)
+def getLatestCount(count, lastUpdate, now):
+  return count * DAMP_FACTOR ** (now - lastUpdate)
 
 @get('/')
 def index():
@@ -31,21 +23,19 @@ def index():
 @get('/count')
 def getCount():
   global count
-  global previousWindow
+  global lastRequest 
   t = time.time()
-  thisWindow = getWindow(t)
-  count = getLatestCount(count, previousWindow, thisWindow)
-  previousWindow = thisWindow
-  return {'count': count, 'time': t, 'window': thisWindow}
+  count = getLatestCount(count, lastRequest, t)
+  lastRequest = t
+  return {'count': count, 'time': t }
 
 @post('/count')
 def incCount():
   global count
-  global previousWindow
+  global lastRequest 
   t = time.time()
-  thisWindow = getWindow(t)
-  count = 1.0 + getLatestCount(count, previousWindow, thisWindow)
-  previousWindow = thisWindow
-  return {'count': count, 'time': t, 'window': thisWindow}
+  count = 1 + getLatestCount(count, lastRequest, t)
+  lastRequest = t
+  return {'count': count, 'time': t }
 
 run(server='gevent', host='localhost', port=8080, debug=True)
