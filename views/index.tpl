@@ -31,6 +31,9 @@
   </head>
   <body>
     <h1>WaffleWaffle</h1>
+    <p>WaffleWaffle provides immediate feedback to presenters</p>
+    <p>Spoiler: You can only make a vote up to every 10 seconds</p>
+    <p>There is no harm mashing the Zzz button though, just in case</p>
     <div id=count></div>
     <form><input type="submit" name="boring" id="boringButton" value="Zzz"></form>
   <script>
