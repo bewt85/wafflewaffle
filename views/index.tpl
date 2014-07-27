@@ -34,8 +34,8 @@
     var n = 10*60,
         data = d3.range(n).map(function(e) { return 0 });
     
-    var margin = {top: 20, right: 20, bottom: 20, left: 40},
-        width = 960 - margin.left - margin.right,
+    var margin = {top: 20, right: 40, bottom: 20, left: 40},
+        width = window.innerWidth - margin.left - margin.right,
         height = 200 - margin.top - margin.bottom;
     
     var x = d3.scale.linear()
