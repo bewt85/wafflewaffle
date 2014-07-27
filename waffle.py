@@ -75,4 +75,4 @@ def incCount():
   return {'error_message': message, 'count': twoSF(history[0]), 'time': t, 'history': map(twoSF, history) }
 
 if __name__ == '__main__':
-  run(server='gevent', host='localhost', port=8080, debug=True)
+  run(server='gevent', host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
