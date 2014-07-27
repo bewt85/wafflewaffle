@@ -87,7 +87,7 @@
        url: "/count",
        async: false,
        success: function(counts) { 
-         data.push.apply(data, counts.history);
+         data.push.apply(data, counts.history.reverse());
          data.splice(0,n) }
      });
 
