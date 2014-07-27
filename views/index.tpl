@@ -19,6 +19,11 @@
         stroke: #000;
         shape-rendering: crispEdges;
       }
+
+      #boringButton {
+        height: 50px;
+        width: 100px;
+      }
       
     </style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
