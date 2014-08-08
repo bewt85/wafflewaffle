@@ -2,7 +2,7 @@
 
 WaffleWaffle is:
 - an experiment in [under-engineering](http://www.underengineering.com/2014/05/22/DIY-NoSql/)
-- a project to learn some javascript (d3.js and jquery)
+- a project to learn some javascript ([d3.js](http://bost.ocks.org/mike/path/) and jquery)
 - a bit of flask practice
 - a fun way of telling people that their meeting / presentation is boring
 
@@ -23,6 +23,5 @@ I'd love to play with it...
 
 ## TODO
 * Make it look a bit prettier
-* Add a QR code
-* Add some graphs
+* Add a QR code (so that your neighbour can play along too)
 * Remove some "accuracy" to improve performance
