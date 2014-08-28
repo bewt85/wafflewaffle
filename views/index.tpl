@@ -34,6 +34,7 @@
     <p>WaffleWaffle provides immediate feedback to presenters</p>
     <p>Spoiler: You can only make a vote up to every 10 seconds</p>
     <p>There is no harm mashing the Zzz button though, just in case</p>
+    <p>You can find the code on <a href="https://github.com/bewt85/wafflewaffle">my github account</a>.</p>
     <div id=count></div>
     <form><input type="submit" name="boring" id="boringButton" value="Zzz"></form>
   <script>
