@@ -21,6 +21,9 @@ You can try an example deployment of WaffleWaffle on [Heroku](wafflewaffle.herok
 Having met most of my objectives, I am unlikely to do any of the following but if you do something similar
 I'd love to play with it...
 
+## Thanks
+* [Grahamhar](https://github.com/grahamhar) for making the chart cope better with really boring meetings
+
 ## TODO
 * Make it look a bit prettier
 * Add a QR code (so that your neighbour can play along too)
