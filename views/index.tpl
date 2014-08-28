@@ -50,9 +50,13 @@
         .domain([0, n - 1])
         .range([0, width]);
     
+    var maxY = 5;
+
     var y = d3.scale.linear()
-        .domain([0, 5])
+        .domain([0, maxY])
         .range([height, 0]);
+
+    var yAxis = d3.svg.axis().scale(y).orient("left").tickFormat(d3.format(",.3f")).ticks(5);
     
     var line = d3.svg.line()
         .x(function(d, i) { return x(i); })
@@ -77,7 +81,7 @@
     
     svg.append("g")
         .attr("class", "y axis")
-        .call(d3.svg.axis().scale(y).orient("left"));
+        .call(yAxis);
     
     var path = svg.append("g")
         .attr("clip-path", "url(#clip)")
@@ -99,6 +103,18 @@
          data.splice(0,n) }
      });
 
+    maxY = d3.max(data)
+
+    if (maxY < 5) {
+      maxY = 5;
+    }
+
+    y
+        .domain([maxY, 0])
+        .range([0, height]);
+
+    var yAxis = d3.svg.axis().scale(y).orient("left").tickFormat(d3.format(",.0f")).ticks(5);
+
       // redraw the line, and slide it to the left
       path
           .attr("d", line)
@@ -109,6 +125,8 @@
           .attr("transform", "translate(" + x(-1) + ",0)")
           .each("end", updateGraphs);
     
+    svg.selectAll("g.y.axis")
+            .call(yAxis);
     }
 
     $(document).ready(function () {
