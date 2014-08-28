@@ -36,7 +36,7 @@ def getLatestCount(count, lastUpdate, now):
   return count * DAMP_FACTOR ** (now - lastUpdate)
 
 def twoSF(count):
-  return "{0:.2f}".format(count)
+  return round(count,2)
 
 @get('/')
 def index():
