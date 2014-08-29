@@ -27,6 +27,7 @@
       
     </style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
   </head>
   <body>
@@ -37,8 +38,13 @@
     <p>You can find the code on <a href="https://github.com/bewt85/wafflewaffle">my github account</a>.</p>
     <div id=count></div>
     <form><input type="submit" name="boring" id="boringButton" value="Zzz"></form>
+    <div>
+      <div>Spread the wafflewaffle love</div>
+      <div id="qrcode"></div>
+    </div>
   <script>
   
+    var whereIAm = $(location).attr('href');
 
     var n = 10*60,
         data = d3.range(n).map(function(e) { return 0 });
@@ -139,6 +145,14 @@
             url: "/count",
           });
         });
+
+    $(document).ready(function($) {
+        $('#qrcode').qrcode({
+            width: 256,
+            height: 256,
+            text: whereIAm
+        });
+    });
     });
   
   </script>
