@@ -38,6 +38,10 @@ def getLatestCount(count, lastUpdate, now):
 def twoSF(count):
   return round(count,2)
 
+@get('/static/<filepath:path>')
+def chart(filepath):
+  return static_file(filepath, os.path.join(os.path.dirname(os.path.realpath(__file__)), "static"))
+
 @get('/')
 def index():
   index_dir = os.path.dirname(__file__)
