@@ -44,7 +44,10 @@
       },
       axis: { 
         y: { 
-          min: 0 
+          min: 0.1,
+          padding: {
+            bottom: 0.1
+          } 
         }, 
         x: { 
           min: 0, 
