@@ -13,8 +13,10 @@
       }
 
     </style>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/staic/jquery.qrcode.min.js"></script>
     <link href="/static/c3.css" rel="stylesheet" type="text/css">
     <script src="/static/c3.min.js"></script>
     <script src="/static/d3.min.js"></script>
