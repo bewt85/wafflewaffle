@@ -12,25 +12,49 @@
         stroke-width: 3px;
       }
 
+      .space-top {
+        margin-top: 20px;
+      }
+
+      .space-bottom {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 500px) {
+        #boringButton {
+          width:100%;
+        }
+      }
+
     </style>
-    <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <script src="/static/bootstrap.min.js"></script>
     <script src="/static/jquery.min.js"></script>
     <script src="/static/jquery.qrcode.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <script src="/static/bootstrap.min.js"></script>
     <link href="/static/c3.css" rel="stylesheet" type="text/css">
     <script src="/static/c3.min.js"></script>
     <script src="/static/d3.min.js"></script>
   </head>
   <body>
-    <h1>WaffleWaffle</h1>
-    <p>WaffleWaffle provides immediate feedback to presenters</p>
-    <p>Spoiler: You can only make a vote up to every 10 seconds</p>
-    <p>There is no harm mashing the Zzz button though, just in case</p>
-    <p>You can find the code on <a href="https://github.com/bewt85/wafflewaffle">my github account</a>.</p>
-    <div id="countChart"></div>
-    <form><input type="submit" name="boring" id="boringButton" value="Zzz"></form>
-    <p>Spread the wafflewaffle love</p>
-    <div id="qrcode"></div>
+    <div class="container">
+      <div class="row page-header col-md-12">
+        <h1>WaffleWaffle</h1>
+        <p class="lead">WaffleWaffle provides immediate feedback to presenters</p>
+      </div>
+      <div class="row col-md-12">
+        <div class="alert alert-info"><strong>Spoiler</strong> You can only vote once every 10 seconds</div>
+        <p>You can find the code on <a href="https://github.com/bewt85/wafflewaffle">my github account</a>.</p>
+      </div>
+      <div class="row col-md-12 space-top">
+        <div id="countChart"></div>
+        <form><input type="submit" name="boring" class="btn btn-primary btn-large" id="boringButton" value="Zzz"></form>
+      </div>
+      <div class="row col-md-12 space-top space-bottom">
+        <h2>Spread the WaffleWaffle love</h2>
+        <p>Why not share WaffleWaffle with your neighbour?</p>
+        <div id="qrcode"></div>
+      </div>
+    </div>
     <script>
     
       var chart = c3.generate({
