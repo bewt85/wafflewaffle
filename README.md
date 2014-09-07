@@ -26,5 +26,8 @@ I'd love to play with it...
 
 ## TODO
 * Make it look a bit prettier
-* Add a QR code (so that your neighbour can play along too)
+  * a bit of bootstrap
+  * better button on mobile
+  * a nicer graph
 * Remove some "accuracy" to improve performance
+* Stop taking up loads of memory and make mobiles get hot
