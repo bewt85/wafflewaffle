@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <script src="/static/bootstrap.min.js"></script>
     <script src="/static/jquery.min.js"></script>
-    <script src="/staic/jquery.qrcode.min.js"></script>
+    <script src="/static/jquery.qrcode.min.js"></script>
     <link href="/static/c3.css" rel="stylesheet" type="text/css">
     <script src="/static/c3.min.js"></script>
     <script src="/static/d3.min.js"></script>
