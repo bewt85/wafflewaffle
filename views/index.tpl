@@ -31,69 +31,69 @@
     <form><input type="submit" name="boring" id="boringButton" value="Zzz"></form>
     <p>Spread the wafflewaffle love</p>
     <div id="qrcode"></div>
-  <script>
-  
-    var chart = c3.generate({
-      bindto: "#countChart",
-      data: {
-        columns: [ ["counts"] ]
-      },
-      point: {
-        show: false
-      },
-      legend: {
-        show: false
-      },
-      axis: { 
-        y: { 
-          min: 0.1,
-          padding: {
-            bottom: 0.1
+    <script>
+    
+      var chart = c3.generate({
+        bindto: "#countChart",
+        data: {
+          columns: [ ["counts"] ]
+        },
+        point: {
+          show: false
+        },
+        legend: {
+          show: false
+        },
+        axis: { 
+          y: { 
+            min: 0.1,
+            padding: {
+              bottom: 0.1
+            } 
+          }, 
+          x: { 
+            min: 0, 
+            type: 'category', 
+            tick: { 
+              format: function(x) { return '' }, 
+              count: 1 
+            } 
           } 
-        }, 
-        x: { 
-          min: 0, 
-          type: 'category', 
-          tick: { 
-            format: function(x) { return '' }, 
-            count: 1 
-          } 
-        } 
-      }
-    });
-
-    function updateGraphs() {
-      $.ajax({
-        type: "GET",
-        url: "/count",
-        async: false,
-        success: function(counts) { 
-          counts.history.reverse().unshift("counts");
-          chart.load({
-            columns: [ counts.history ]
-          });
         }
       });
-    }
-
-    $(document).ready(function () {
-      updateGraphs();
-      setInterval(updateGraphs, 1000);
-      $("#boringButton").click(function(e) {
-        e.preventDefault();
+  
+      function updateGraphs() {
         $.ajax({
-          type: "POST",
+          type: "GET",
           url: "/count",
+          async: false,
+          success: function(counts) { 
+            counts.history.reverse().unshift("counts");
+            chart.load({
+              columns: [ counts.history ]
+            });
+          }
+        });
+      }
+  
+      $(document).ready(function () {
+        updateGraphs();
+        setInterval(updateGraphs, 1000);
+        $("#boringButton").click(function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: "POST",
+            url: "/count",
+          });
+        });
+        var whereIAm = $(location).attr('href');
+        $('#qrcode').qrcode({
+            width: 256,
+            height: 256,
+            text: whereIAm
         });
       });
-      var whereIAm = $(location).attr('href');
-      $('#qrcode').qrcode({
-          width: 256,
-          height: 256,
-          text: whereIAm
-      });
-    });
-  
-  </script>
+    
+    </script>
   </body>
 </html>
