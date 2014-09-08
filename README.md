@@ -22,12 +22,10 @@ Having met most of my objectives, I am unlikely to do any of the following but i
 I'd love to play with it...
 
 ## Thanks
-* [Grahamhar](https://github.com/grahamhar) for making the chart cope better with really boring meetings
+* [Grahamhar](https://github.com/grahamhar) for the QR Code goodness
 
 ## TODO
 * Make it look a bit prettier
-  * a bit of bootstrap
-  * better button on mobile
   * a nicer graph
 * Remove some "accuracy" to improve performance
 * Stop taking up loads of memory and make mobiles get hot
