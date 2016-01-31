@@ -21,11 +21,12 @@ You can try an example deployment of WaffleWaffle on [Heroku](wafflewaffle.herok
 Having met most of my objectives, I am unlikely to do any of the following but if you do something similar
 I'd love to play with it...
 
-## Thanks
-* [Grahamhar](https://github.com/grahamhar) for the QR Code goodness
-
 ## TODO
 * Make it look a bit prettier
   * a nicer graph
 * Remove some "accuracy" to improve performance
 * Stop taking up loads of memory and make mobiles get hot
+
+## Thanks
+* [Grahamhar](https://github.com/grahamhar) for the QR Code goodness
+
