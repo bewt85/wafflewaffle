@@ -16,7 +16,7 @@ either speed up or (more likely) slow down.
 Perhaps this is also the natural conclusion of micro-blogging?  You cannot get more micro (nano?) than
 only being able to post 1 binary bit of data every 10 seconds :)
 
-You can try an example deployment of WaffleWaffle on [Heroku](wafflewaffle.herokuapp.com)
+You can try an example deployment of WaffleWaffle on [Heroku](https://wafflewaffle.herokuapp.com)
 
 Having met most of my objectives, I am unlikely to do any of the following but if you do something similar
 I'd love to play with it...
